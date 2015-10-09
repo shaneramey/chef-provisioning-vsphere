@@ -146,9 +146,9 @@ module ChefProvisioningVsphere
 
     def merge_options!(machine_options)
       @config = Cheffish::MergedConfig.new(
-        { machine_options: machine_options },
-        @config
+        { machine_options: machine_options }
       )
+      @config
     end
 
     def add_machine_spec_location(vm, machine_spec)

@@ -182,7 +182,8 @@ knife cookbook upload my_cookbook
 chef-client -o 'my_cookbook::provision' -c .chef/knife.rb
 ```
 
-### Prefix all SSH commands with 'sudo ', for installing on hosts where options[:bootstrap_options][:ssh][:user] is not 'root'. The user must have 'NOPASSWD:ALL' in /etc/sudoers. This is compatible with chef-provisioning-fog functionality
+### Prefix all SSH commands with 'sudo '
+This method is used for installing on hosts where options[:bootstrap_options][:ssh][:user] is not 'root'. The user must have 'NOPASSWD:ALL' in /etc/sudoers. This is compatible with chef-provisioning-fog functionality
 
 ```
 chef_gem 'chef-provisioning-vsphere' do
