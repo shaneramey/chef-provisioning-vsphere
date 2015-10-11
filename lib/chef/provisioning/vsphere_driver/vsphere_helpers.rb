@@ -232,6 +232,7 @@ module ChefProvisioningVsphere
           Chef::Log.debug('Parent folder is a folder')
           parent_folder = parent_folder.childEntity.find { |f| f.name == item }
         else
+          Chef::Log.debug('Parent folder is a ' + parent_folder.class)
           parent_folder = block.call(parent_folder, item)
         end
       end
@@ -260,6 +261,7 @@ module ChefProvisioningVsphere
 
     def find_pool(pool_name)
       Chef::Log.debug("Finding pool: #{pool_name}")
+      Chef::Log.debug("In datacenter: #{datacenter}")
       pool = find_entity(pool_name, datacenter.hostFolder) do |parent, part|
         case parent
         when RbVmomi::VIM::ClusterComputeResource, RbVmomi::VIM::ComputeResource
