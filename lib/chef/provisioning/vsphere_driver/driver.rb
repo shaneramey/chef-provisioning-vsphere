@@ -145,7 +145,7 @@ module ChefProvisioningVsphere
     end
 
     def merge_options!(machine_options)
-      { machine_options: machine_options }
+      @config = { machine_options: machine_options }
       #@config = Cheffish::MergedConfig.new(
       #  { machine_options: machine_options }
       #)
