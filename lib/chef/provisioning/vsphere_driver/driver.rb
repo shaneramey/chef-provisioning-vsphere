@@ -538,7 +538,8 @@ module ChefProvisioningVsphere
     end
 
     def vsphere_helper
-      @vsphere_helper ||= VsphereHelper.new(
+      # @vsphere_helper ||= VsphereHelper.new(
+      @vsphere_helper = VsphereHelper.new(
         connect_options, 
         config[:machine_options][:bootstrap_options][:datacenter]
       )
