@@ -232,7 +232,7 @@ module ChefProvisioningVsphere
           Chef::Log.debug('Parent folder is a folder')
           parent_folder = parent_folder.childEntity.find { |f| f.name == item }
         else
-          Chef::Log.debug('Parent folder is a ' + parent_folder.class)
+          Chef::Log.debug("Parent folder is a #{parent_folder.class}")
           parent_folder = block.call(parent_folder, item)
         end
       end
